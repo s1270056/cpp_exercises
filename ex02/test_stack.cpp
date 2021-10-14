@@ -6,7 +6,7 @@ using namespace std;
 int main(void)
 {
     Stack stack1;
-    std::string moji;
+  //  std::string moji;
 
     if (stack1.empty())
         cout << "stack is empty" << endl;
@@ -20,6 +20,8 @@ int main(void)
     stack1.push("s1270056");
     stack1.push("Tanaka");
     stack1.push("Takaaki");
+    
+    cout << "push: " << stack1.size() << endl;
 
     if (stack1.full())
         cout << "stack is full" << endl;
