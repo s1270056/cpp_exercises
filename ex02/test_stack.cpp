@@ -6,7 +6,7 @@ using namespace std;
 int main(void)
 {
     Stack stack1;
-  //  std::string moji;
+
 
     if (stack1.empty())
         cout << "stack is empty" << endl;
