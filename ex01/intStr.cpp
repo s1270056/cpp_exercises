@@ -7,6 +7,14 @@ char *intToStr(int seisu)
     int ketasu = 0, flag[100], x = 0;
     int i, j;
     char *tostr = (char *)malloc(sizeof(char) * ketasu);
+
+    if (seisu < 0)
+    {
+        seisu = seisu * -1;
+        *tostr = '-';
+        tostr++;
+        ketasu++;
+    } 
     x = seisu;
     while (x > 0)
     {
@@ -26,19 +34,25 @@ char *intToStr(int seisu)
 
         tostr++;
     }
+
     tostr = tostr - ketasu;
     return tostr;
-    
 }
 
-int strToInt(char const*moji)
+int strToInt(char const *moji)
 {
-    int i, j, toint=0;
+    int i, j, toint = 0, flag = 1;
 
-  while(*moji != '\0')
+    if (*moji == '-')
     {
-        toint = toint*10 + (*moji - '0');
+        moji++;
+        flag = flag * -1;
+    }
+
+    while (*moji != '\0')
+    {
+        toint = toint * 10 + (*moji - '0');
         moji++;
     }
-    return toint;
+    return toint * flag;
 }
