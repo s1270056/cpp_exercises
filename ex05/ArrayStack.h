@@ -69,6 +69,7 @@ public:
     ArrayStack& operator=(const ArrayStack& y){
         _num_items = y._num_items;
         _allocated_size = y._allocated_size;
+        _items = new double[y._num_items];
         _items = y._items;
         cout << "Assignment Operator" << endl;
     }
