@@ -55,6 +55,7 @@ public:
         // delete[] _allocated_size;
     }
 
+  //copy
     ArrayStack(const ArrayStack& x){
         _num_items = x._num_items;
         _allocated_size = x._allocated_size;
@@ -62,11 +63,28 @@ public:
          cout << "Copy Constructor" << endl;
     }  
 
+   //assignment
     ArrayStack& operator=(const ArrayStack& y){
         _num_items = y._num_items;
         _allocated_size = y._allocated_size;
         _items = y._items;
         cout << "Assignment Operator" << endl;
+    }
+
+    //move const
+    ArrayStack(ArrayStack&& p){
+        _num_items = p._num_items;
+        _allocated_size = p._allocated_size;
+        _items = p._items;
+        cout << "Move Constructor" << endl;
+    }
+
+    //move assignment
+    ArrayStack& operator=(ArrayStack&& q){
+        _num_items = q._num_items;
+        _allocated_size = q._allocated_size;
+        _items = q._items;
+        cout << "Move Assignment" << endl;
     }
 
     void push(double item) {

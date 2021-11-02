@@ -24,8 +24,8 @@ int main(void)
     stack2.push(1.0);
     stack2.push(2.0);
     stack2.push(3.0);
-   stack2.push(4.0);
-   stack2.push(5.0);
+    stack2.push(4.0);
+    stack2.push(5.0);
     stack2.push(6.0);
     stack2.push(7.0);
     stack2.push(8.0);
@@ -42,24 +42,38 @@ int main(void)
     //     stack2.pop();
     // cout << stack2.top() << endl;
 
+    // Copy
+    ArrayStack stack3(stack1);
+    ArrayStack stack4 = stack2;
+    // Assignment
+    ArrayStack stack5;
+    stack5 = stack1;
+    ArrayStack stack6(10);
+    stack6 = stack6;
 
-       // Copy
-       ArrayStack stack3(stack1);
-       ArrayStack stack4 = stack2;
-           // Assignment
-       ArrayStack stack5;
-       stack5 = stack1;
-       ArrayStack stack6(10);
-       stack6 = stack6;
+    stack1.pop();
+    cout << stack1.top() << endl;
+    stack3.pop();
+    cout << stack3.top() << endl;
+    stack4.pop();
+    cout << stack4.top() << endl;
 
-       stack1.pop();
-       cout << stack1.top() << endl;
-       stack3.pop();
-       cout << stack3.top() << endl;
-       stack4.pop();
-       cout << stack4.top() << endl;
+    // Move
+    ArrayStack stack7 = std::move(stack5);
 
-   
+    stack6 = std::move(stack2);
+
+    // COMPLETE
+    // Show the content of the stacks 'stack5', 'stack7', 'stack6' and 'stack2'
+    // (use the same method as in question 2)
+    stack5.pop();
+    cout << stack5.top() << endl;
+    stack7.pop();
+    cout << stack7.top() << endl;
+    stack6.pop();
+    cout << stack6.top() << endl;
+    stack2.pop();
+    cout << stack2.top() << endl;
 
     return 0;
 }
