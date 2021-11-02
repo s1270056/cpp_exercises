@@ -53,6 +53,7 @@ public:
         // COMPLETE
         // delete[] _num_items;
         // delete[] _allocated_size;
+        delete[] _items;
     }
 
   //copy
