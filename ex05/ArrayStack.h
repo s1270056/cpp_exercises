@@ -2,6 +2,7 @@
 
 #include <string>
 #include <iostream>
+using namespace std;
 
 #ifndef ARRAY_STACK_H
 #define ARRAY_STACK_H
@@ -29,7 +30,6 @@ class ArrayStack {
 public:
     // Constructors:
     ArrayStack() {
-        double* p = nullptr;
         _num_items = 0;
         _allocated_size = 0;
         _items = nullptr;
@@ -40,7 +40,8 @@ public:
 
     explicit ArrayStack(int allocated_size) {
         _num_items = 0;
-         resize(_allocated_size);
+         resize(allocated_size);
+        
 
     }
     /* COMPLETE ... init _num_items to 0, 
@@ -50,6 +51,22 @@ public:
     // Destructor:
     ~ArrayStack() {
         // COMPLETE
+        // delete[] _num_items;
+        // delete[] _allocated_size;
+    }
+
+    ArrayStack(const ArrayStack& x){
+        _num_items = x._num_items;
+        _allocated_size = x._allocated_size;
+        _items = x._items;
+         cout << "Copy Constructor" << endl;
+    }  
+
+    ArrayStack& operator=(const ArrayStack& y){
+        _num_items = y._num_items;
+        _allocated_size = y._allocated_size;
+        _items = y._items;
+        cout << "Assignment Operator" << endl;
     }
 
     void push(double item) {
