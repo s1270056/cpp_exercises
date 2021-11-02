@@ -14,8 +14,7 @@ int main(void)
     stack1.push(4.0);
     stack1.push(5.0);
 
-    // stack1.pop();
-    // cout << stack1.top() << endl;
+
 
     // Create another instance of ArrayStack named stack2
     //   using the other constructor, specify an original size of 5
@@ -31,16 +30,7 @@ int main(void)
     stack2.push(8.0);
     stack2.push(9.0);
     stack2.push(10.0);
-    //     stack2.pop();
-    // cout << stack2.top() << endl;
-    //     stack2.pop();
-    //     stack2.pop();
-    //     stack2.pop();
-    //     stack2.pop();
-    //     stack2.pop();
-    //     stack2.pop();
-    //     stack2.pop();
-    // cout << stack2.top() << endl;
+
 
     // Copy
     ArrayStack stack3(stack1);

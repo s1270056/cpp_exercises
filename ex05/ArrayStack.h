@@ -57,9 +57,10 @@ public:
 
   //copy
     ArrayStack(const ArrayStack& x){
-        _num_items = x._num_items;
-        _allocated_size = x._allocated_size;
-        _items = x._items;
+         _num_items = x._num_items;
+         _allocated_size = x._allocated_size;
+         _items = new double[x._num_items];
+         _items = x._items;
          cout << "Copy Constructor" << endl;
     }  
 
