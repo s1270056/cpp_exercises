@@ -3,6 +3,8 @@
 #include <stack>
 #include <sstream>
 #include <vector>
+#include <iomanip>
+
 
 using namespace std;
 
@@ -78,6 +80,8 @@ int main(){
     string str1 = "( 1 + ( ( 2 + 3 ) * ( 4 * 5 ) ) )";
     string str2 = "( ( ( 2.0 * ( 3.0 - 1.0 ) ) - 5.0 ) * 3.0 )";
     
+    cout <<  fixed << setprecision(1);
+
     cout << "Input: " << str1 << endl;
     cout << "Output: "<< twostack(str1) << endl;
 
