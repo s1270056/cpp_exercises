@@ -176,6 +176,7 @@ double twostack(const string str){
 int main(){
     string str1 = "3 + 5 * 6 - 7 * ( 8 + 5 )";
     string str2 = "25.0 * 12.0 / 5.0 - 8.0";
+    string str3 = "( 27.0 / 18 ) * 2 + 3 - ( 7.0 - 1 )";
 
     cout <<  fixed << setprecision(1);
 
@@ -184,6 +185,9 @@ int main(){
 
     cout << "Input: " << str2 << endl;
     cout << "Output: "<< twostack(str2) << endl;
+
+    cout << "Input: " << str3 << endl;
+    cout << "Output: "<< twostack(str3) << endl;
     return 0;
 
 }
