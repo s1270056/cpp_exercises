@@ -2,7 +2,7 @@
 #include "Date.h"
 using namespace std;
 
-void Date::set(int m, int d, int y) {
+void Date::set(const int m,const int d,const int y) {
     month = m;
     day = d;
     year = y;
