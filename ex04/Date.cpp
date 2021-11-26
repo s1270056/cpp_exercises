@@ -8,19 +8,19 @@ void Date::set(int m, int d, int y) {
     year = y;
 }
 
-void Date::print() {
+void Date::print() const{
     cout << year << "年 " << month << "月 " << day << "日\n";
 }
 
-int Date::get_month() {
+int Date::get_month() const {
     return month;
 }
 
-int Date::get_year() {
+int Date::get_year() const{
     return year;
 }
 
-int Date::get_day() {
+int Date::get_day() const{
     return day;
 }
 

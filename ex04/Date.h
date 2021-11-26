@@ -5,10 +5,10 @@ class Date {
 public:
   Date() {}
   void set(const int m, const int d, const int y);
-  void print();
-  int get_month();
-  int get_day();
-  int get_year();
+  void print()const;
+  int get_month() const;
+  int get_day()const;
+  int get_year()const;
   void inc_day(); 
   void inc_month();
   void inc_year();
