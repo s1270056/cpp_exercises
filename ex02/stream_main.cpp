@@ -9,10 +9,9 @@ int main()
     std::string x;
     int y, z, i;
     std::ifstream ifs("data.txt");
-    std::string str[z];
     getline(ifs, x);
-    z = stoi(x);
-
+    z = stoi(x)+1;
+    std::string str[z];
     str[0] = " ";
     y = str[0].length();
 
@@ -26,7 +25,7 @@ int main()
         }
     }
 
-    cout.width(y + 1);
+    cout.width(y + 2);
     cout.fill('-');
     cout << '\n';
 
@@ -35,7 +34,7 @@ int main()
         cout << stack2.top() << endl;
         stack2.pop();
     }
-    cout.width(y + 1);
+    cout.width(y + 2);
     cout.fill('-');
     cout << '\n';
 
