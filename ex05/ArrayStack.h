@@ -72,6 +72,7 @@ public:
         _items = new double[y._num_items];
         _items = y._items;
         cout << "Assignment Operator" << endl;
+        return *this;
     }
 
     //move const
@@ -88,6 +89,7 @@ public:
         _allocated_size = q._allocated_size;
         _items = q._items;
         cout << "Move Assignment" << endl;
+        return *this;
     }
 
     void push(double item) {
