@@ -29,6 +29,7 @@ int main(void) {
  cout << "find_k_closest_2" << endl;
 
   vector<Point> list2 = find_k_closest_2(4, points);
+    j=1;
 
  for (int i = 0; i < 4; ++i) {
    std::cout << j << "番目に近い: " << list2[i].x << ", " << list2[i].y << ", " << list2[i].z << std::endl;
