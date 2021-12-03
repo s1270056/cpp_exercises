@@ -81,5 +81,7 @@ int main(void)
         stack2.pop();
     }
 
+    cout << "end" << endl;
+
     return 0;
 }
