@@ -1,7 +1,7 @@
 #ifndef INC_H
 #define INC_H
 
-double inc(double &x);
-double inc(double *y);
+void inc(double &x);
+void inc2(double *y);
 
 #endif

@@ -13,9 +13,9 @@ int main(void)
     assert(a == 3.0);
 
     a = 1.0;
-    inc(&a);
+    inc2(&a);
     assert(a == 2.0);
-    inc(&a);
+    inc2(&a);
     assert(a == 3.0);
     return 0;
 }

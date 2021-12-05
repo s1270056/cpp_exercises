@@ -1,12 +1,10 @@
 #include <iostream>
 #include "inc.h"
 
-double inc(double &x){
+void inc(double &x){
     x++;
-    return x;
 }
 
-double inc(double *y){
+void inc2(double *y){
     (*y)++;
-    return *y;
 }
