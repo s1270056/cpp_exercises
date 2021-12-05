@@ -40,56 +40,71 @@ public:
 
     explicit ArrayStack(int allocated_size) {
         _num_items = 0;
-         resize(allocated_size);
-        
+        _allocated_size = allocated_size;
+        _items = new double[allocated_size];
 
     }
     /* COMPLETE ... init _num_items to 0, 
      * pre-allocate memory for an array of size allocated_size
      * and make _items point to it */
 
-    // Destructor:
-    ~ArrayStack() {
-        // COMPLETE
-        // delete[] _num_items;
-        // delete[] _allocated_size;
-        delete[] _items;
-    }
+
+
 
   //copy
     ArrayStack(const ArrayStack& x){
          _num_items = x._num_items;
          _allocated_size = x._allocated_size;
          _items = new double[x._num_items];
-         _items = x._items;
+         for( int i = 0; i < x._num_items; i++ ){
+      _items[i] = x._items[i];
+    }
          cout << "Copy Constructor" << endl;
     }  
 
    //assignment
-    ArrayStack& operator=(const ArrayStack& y){
+    ArrayStack& operator = (const ArrayStack& y){
+        delete[] _items;
         _num_items = y._num_items;
         _allocated_size = y._allocated_size;
         _items = new double[y._num_items];
-        _items = y._items;
+        for( int i = 0; i < y._num_items; i++ ){
+      _items[i] = y._items[i];
+    }
         cout << "Assignment Operator" << endl;
         return *this;
     }
 
     //move const
-    ArrayStack(ArrayStack&& p){
+    ArrayStack(ArrayStack&& p) noexcept{
         _num_items = p._num_items;
         _allocated_size = p._allocated_size;
-        _items = p._items;
+        _items = new double[p._num_items];
+        for( int i = 0; i < p._num_items; i++ ){
+      _items[i] = p._items[i];
+    }
         cout << "Move Constructor" << endl;
     }
 
     //move assignment
-    ArrayStack& operator=(ArrayStack&& q){
+    ArrayStack& operator=(ArrayStack&& q) noexcept{
+        if(this == &q) return *this;
         _num_items = q._num_items;
         _allocated_size = q._allocated_size;
-        _items = q._items;
+        _items = new double[q._num_items];
+        for( int i = 0; i < q._num_items; i++ ){
+      _items[i] = q._items[i];
+    }
         cout << "Move Assignment" << endl;
         return *this;
+    }
+
+    // Destructor:
+    virtual ~ArrayStack() {
+        // COMPLETE
+        // delete[] _num_items;
+        // delete[] _allocated_size;
+        delete[] _items;
     }
 
     void push(double item) {
