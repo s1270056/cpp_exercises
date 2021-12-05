@@ -5,6 +5,6 @@ void inc(double &x){
     x++;
 }
 
-void inc2(double *y){
+void inc(double *y){
     (*y)++;
 }
