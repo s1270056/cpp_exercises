@@ -16,24 +16,26 @@ char *intToStr(int seisu)
         ketasu++;
     } 
     x = seisu;
-    while (x > 0)
+    while (x != 0)
     {
         x = x / 10;
         ketasu++;
     }
 
-    for (i = 0; i < ketasu; i++)
+    for (i = 1; i < ketasu; i++)
     {
         flag[i] = seisu % 10;
         seisu = seisu / 10;
     }
 
-    for (j = ketasu - 1; j >= 0; j--)
+    for (j = ketasu - 1; j > 0; j--)
     {
         *tostr = 48 + flag[j];
 
         tostr++;
     }
+    *tostr = '\0';
+    ketasu++;
 
     tostr = tostr - ketasu;
     return tostr;

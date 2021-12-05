@@ -3,9 +3,9 @@
 #include "intStr.h"
 
 int main(){
-    int a = 12345;
+    int a = -12345;
     char *b;
-    const char *c = "12345";
+    const char *c = "-12345";
     int d;
 
     b = intToStr(a);
