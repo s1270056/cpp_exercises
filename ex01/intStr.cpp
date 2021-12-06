@@ -5,16 +5,8 @@
 char *intToStr(int seisu)
 {
     int ketasu = 0, flag[100], x = 0;
-    int i, j;
-    char *tostr = (char *)malloc(sizeof(char) * ketasu);
+    int i, j, k=0;
 
-    if (seisu < 0)
-    {
-        seisu = seisu * -1;
-        *tostr = '-';
-        tostr++;
-        ketasu++;
-    } 
     x = seisu;
     while (x != 0)
     {
@@ -22,22 +14,29 @@ char *intToStr(int seisu)
         ketasu++;
     }
 
-    for (i = 1; i < ketasu; i++)
+    char *tostr = static_cast<char*>(malloc(sizeof(char) * ketasu));
+
+    if (seisu < 0)
+    {
+        seisu = seisu * -1;
+        tostr[0] = '-';
+        k++;
+    } 
+
+
+    for (i = 0; i < ketasu; i++)
     {
         flag[i] = seisu % 10;
         seisu = seisu / 10;
     }
 
-    for (j = ketasu - 1; j > 0; j--)
+    for (j = ketasu - 1 ; j >= 0; j--)
     {
-        *tostr = 48 + flag[j];
-
-        tostr++;
+        tostr[k] = 48 + flag[j];
+        k++;
     }
-    *tostr = '\0';
+    tostr[k] = '\0';
     ketasu++;
-
-    tostr = tostr - ketasu;
     return tostr;
 }
 

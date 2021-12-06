@@ -1,17 +1,15 @@
 #include <iostream>
 #include <cstdlib>
 #include "intStr.h"
+using namespace std;
 
 int main(){
     int a = -12345;
-    char *b;
+    char *b = intToStr(a);;
     const char *c = "-12345";
-    int d;
+    int d = strToInt(c);
 
-    b = intToStr(a);
-    printf("%s \n",b);
-    
-    d = strToInt(c);
-    printf("%d ",d);
+    cout << b << endl;
+    cout << d << endl;
     return 0;
 }
