@@ -75,37 +75,7 @@ public:
         return *this;
     }
 
-    //move const
-    ArrayStack(ArrayStack&& p) noexcept{
-        _num_items = p._num_items;
-        _allocated_size = p._allocated_size;
-        _items = new double[p._num_items];
-        for( int i = 0; i < p._num_items; i++ ){
-      _items[i] = p._items[i];
-    }
-        cout << "Move Constructor" << endl;
-    }
 
-    //move assignment
-    ArrayStack& operator=(ArrayStack&& q) noexcept{
-        if(this == &q) return *this;
-        _num_items = q._num_items;
-        _allocated_size = q._allocated_size;
-        _items = new double[q._num_items];
-        for( int i = 0; i < q._num_items; i++ ){
-      _items[i] = q._items[i];
-    }
-        cout << "Move Assignment" << endl;
-        return *this;
-    }
-
-    // Destructor:
-    virtual ~ArrayStack() {
-        // COMPLETE
-        // delete[] _num_items;
-        // delete[] _allocated_size;
-        delete[] _items;
-    }
 
     void push(double item) {
         if (_num_items == _allocated_size) resize(2*_allocated_size);
@@ -124,6 +94,48 @@ public:
     bool empty() const { return _num_items == 0; }
 
     int size() const { return _num_items; }
+
+        //move const
+    ArrayStack(ArrayStack&& p) noexcept{
+        int flag;
+        _num_items = p._num_items;
+        _allocated_size = p._allocated_size;
+        _items = new double[p._num_items];
+        for( int i = 0; i < p._num_items; i++ ){
+      _items[i] = p._items[i];
+      flag = i;
+    }
+    for(int j=flag; j >= 0; j-- ){
+      p.pop();
+    }
+        cout << "Move Constructor" << endl;
+    }
+
+    //move assignment
+    ArrayStack& operator=(ArrayStack&& q) noexcept{
+        int flag;
+        if(this == &q) return *this;
+        _num_items = q._num_items;
+        _allocated_size = q._allocated_size;
+        _items = new double[q._num_items];
+        for( int i = 0; i < q._num_items; i++ ){
+      _items[i] = q._items[i];
+      flag = i;
+    }
+    for(int j=flag; j >= 0; j-- ){
+      q.pop();
+    }
+        cout << "Move Assignment" << endl;
+        return *this;
+    }
+
+    // Destructor:
+    virtual ~ArrayStack() {
+        // COMPLETE
+        // delete[] _num_items;
+        // delete[] _allocated_size;
+        delete[] _items;
+    }
 };
 
 #endif // ARRAY_STACK_H
