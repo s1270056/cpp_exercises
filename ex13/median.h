@@ -43,7 +43,7 @@ vector<double> compute_k_closest(int k, const vector<double>& number){
 
     };
 
-    std::nth_element(res.begin(), res.begin() + number.size() / 2, res.end(), compare);
+    std::nth_element(res.begin(), res.begin() + res.size() / 2, res.end(), compare);
     return res;
 
 }
