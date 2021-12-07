@@ -32,9 +32,9 @@ double compute_median(vector<double> num){
 vector<double> compute_k_closest(int k, const vector<double>& number){
 
     auto mid = compute_median(number);
-    auto res = number;
+    auto reslt = number;
 
-    auto compare = [mid](int l, int r) {
+    auto compare = [mid](auto l, auto r) {
 
         auto lef=abs(l - mid);
         auto rig=abs(r - mid);
@@ -43,8 +43,8 @@ vector<double> compute_k_closest(int k, const vector<double>& number){
 
     };
 
-    nth_element(res.begin(), res.begin() + res.size() / 2, res.end(), compare);
-    return res;
+    nth_element(reslt.begin(), reslt.begin() + number.size() %2, reslt.end(), compare);
+    return reslt;
 
 }
 
