@@ -14,11 +14,11 @@ double compute_median(vector<double> num){
     double res;
     if(size % 2 == 0){
         nth_element(num.begin(), num.begin() + x, num.end());
-        size_t y = x+1;
+        size_t y = x-1;
         res = (num[x]+num[y]) / 2;
-    };
+    }
 
-    if(size % 2 == 1){
+    else if(size % 2 == 1){
         nth_element(num.begin(), num.begin() + x, num.end());
         res = num[x];
 
@@ -43,7 +43,7 @@ vector<double> compute_k_closest(int k, const vector<double>& number){
 
     };
 
-    std::nth_element(res.begin(), res.begin() + res.size() / 2, res.end(), compare);
+    nth_element(res.begin(), res.begin() + res.size() / 2, res.end(), compare);
     return res;
 
 }

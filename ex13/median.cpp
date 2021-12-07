@@ -38,12 +38,12 @@ int main(void){
 
     vector<double> num2;
     num2.push_back(7.0);
-    num2.push_back(14.0);
+    num2.push_back(9.0);
     num2.push_back(10.0);
-    num2.push_back(12.0);
+    num2.push_back(5.0);
     num2.push_back(2.0);
-    num2.push_back(11.0);
-    num2.push_back(29.0);
+    num2.push_back(6.0);
+    num2.push_back(8.0);
     num2.push_back(3.0);
     num2.push_back(4.0);
     num2.push_back(1.0);
